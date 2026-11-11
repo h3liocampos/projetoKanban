@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7f6">
+  <meta name="description" content="Entre na sua conta para acessar o quadro de tarefas Fluxo.">
+  <title>Entrar | Fluxo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
+  <script type="module" src="login.js"></script>
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <header class="login-header">
+      <a class="brand login-brand" href="index.html" aria-label="Fluxo, página inicial">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 8h.01M8 12h.01M12 8h4M12 12h4M8 16h8"/></svg>
+        </span>
+        fluxo
+      </a>
+      <span class="login-header-note">Seu espaço de trabalho</span>
+    </header>
+
+    <section class="login-card" aria-labelledby="login-title">
+      <p class="eyebrow">Acesso à conta</p>
+      <h1 id="login-title">Bom ter você de volta.</h1>
+      <p class="login-intro">Entre com seu e-mail para continuar organizando suas tarefas.</p>
+
+      <form id="login-form" novalidate>
+        <label class="login-field" for="identifier">
+          <span>E-mail</span>
+          <input id="identifier" name="identifier" type="email" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="voce@exemplo.com" required aria-describedby="login-message">
+        </label>
+
+        <label class="login-field" for="password">
+          <span>Senha</span>
+          <span class="password-control">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required aria-describedby="login-message">
+            <button class="password-toggle" id="password-toggle" type="button" aria-label="Mostrar senha" aria-pressed="false" title="Mostrar senha">
+              <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </span>
+        </label>
+
+        <p class="login-message" id="login-message" role="status" aria-live="polite" hidden></p>
+        <button class="primary-button login-submit" id="login-submit" type="submit">
+          <span class="submit-label">Entrar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <div class="login-divider"><span>FLUXO</span></div>
+      <a class="home-link" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        Voltar à página inicial
+      </a>
+    </section>
+
+    <footer class="login-footer">
+      <span class="footer-dot" aria-hidden="true"></span>
+      <span id="connection-note">Acesso protegido à sua área de trabalho</span>
+    </footer>
+  </main>
+</body>
+</html>

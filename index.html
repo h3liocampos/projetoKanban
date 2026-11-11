@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7f6">
+  <title>Fluxo | Quadro Kanban</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 8h.01M8 12h.01M12 8h4M12 12h4M8 16h8"/></svg>
+        </span>
+        fluxo
+      </div>
+      <div class="topbar-actions">
+        <div class="top-note"><span class="sync-dot" aria-hidden="true"></span> Salvo neste dispositivo</div>
+        <button class="logout-button" id="logout-button" type="button" aria-label="Sair da conta" title="Sair da conta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>
+          Sair
+        </button>
+      </div>
+    </header>
+
+    <section aria-labelledby="page-title">
+      <div class="heading-row">
+        <div>
+          <p class="eyebrow">Seu espaço de trabalho</p>
+          <h1 id="page-title">Quadro de tarefas</h1>
+          <p class="subtitle">Organize as ideias. Faça acontecer.</p>
+        </div>
+        <button class="primary-button" id="open-dialog" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Adicionar nova tarefa
+        </button>
+      </div>
+
+      <div class="board" id="board" aria-label="Quadro Kanban">
+        <section class="column" data-status="todo" aria-labelledby="todo-title">
+          <header class="column-header"><div class="column-title-wrap"><span class="column-dot"></span><h2 id="todo-title">A Fazer</h2></div><span class="count" aria-label="0 tarefas">0</span></header>
+          <div class="task-list" data-list="todo" aria-label="Tarefas a fazer"></div>
+        </section>
+        <section class="column" data-status="progress" aria-labelledby="progress-title">
+          <header class="column-header"><div class="column-title-wrap"><span class="column-dot"></span><h2 id="progress-title">Em Andamento</h2></div><span class="count" aria-label="0 tarefas">0</span></header>
+          <div class="task-list" data-list="progress" aria-label="Tarefas em andamento"></div>
+        </section>
+        <section class="column" data-status="done" aria-labelledby="done-title">
+          <header class="column-header"><div class="column-title-wrap"><span class="column-dot"></span><h2 id="done-title">Concluído</h2></div><span class="count" aria-label="0 tarefas">0</span></header>
+          <div class="task-list" data-list="done" aria-label="Tarefas concluídas"></div>
+        </section>
+      </div>
+      <footer class="board-footer"><span id="task-summary" aria-live="polite">0 tarefas no quadro</span><span>Arraste os cartões para atualizar o andamento</span></footer>
+    </section>
+  </main>
+
+  <dialog id="task-dialog" aria-labelledby="dialog-title">
+    <form class="dialog-content" id="task-form">
+      <div class="dialog-heading">
+        <div><h2 id="dialog-title">Nova tarefa</h2><p>Adicione os detalhes para começar.</p></div>
+        <button class="close-button" id="close-dialog" type="button" aria-label="Fechar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m18 6-12 12M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <label class="field"><span>Título</span><input id="task-title" name="title" type="text" maxlength="100" placeholder="Ex.: Preparar apresentação" required></label>
+      <label class="field"><span>Descrição <span style="display:inline;color:#879590;font-weight:400">(opcional)</span></span><textarea id="task-description" name="description" maxlength="500" placeholder="Inclua contexto ou próximos passos..."></textarea></label>
+      <div class="form-actions">
+        <button class="secondary-button" id="cancel-dialog" type="button">Cancelar</button>
+        <button class="primary-button" type="submit">Criar tarefa</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
